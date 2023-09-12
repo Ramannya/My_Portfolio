@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ramannya's portfolio site</title>
+    <link href="normalise.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/353d5efd9a.js" crossorigin="anonymous"></script>
+    <style>
+        body{
+            background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
+        
+        }
+        nav{
+            display: flex;
+            background-color: #200e3d;
+            justify-content: center;
+            position: fixed;
+            width: 100%;
+            z-index: 1;
+        }
+
+        nav ul{
+            display: flex;
+            align-items: center;
+            padding: 0 10%;
+            list-style: none;
+        }
+        nav ul li a{
+            font-size: 16px;
+            padding: 0 15px;
+            color: white;
+            transition: 0.2s;
+            text-transform: uppercase;
+        }
+        nav ul li a:hover{
+            transition: 0.2s;
+            color: #52c5ff;
+
+
+        }
+        .container{
+            position: relative;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+            
+
+
+        }
+        .hero{
+            padding-top: 130px;
+        }
+        .hero img{
+            border-style: none;
+            border-radius: 50%;
+            margin: 0 auto;
+            max-width: 440px;
+            display: block;
+        }
+        h1{
+            color: black;
+            text-align: center;
+            font-size: 24px;
+            margin: 30px 0 100px;
+
+        }
+        .aboutme{
+            width: 90%;
+            max-width: 1100px;
+            height: auto;
+            background-color: white;
+            text-align: center;
+            padding: 40px 50px 70px;
+            margin: 0 auto;
+            box-shadow: 10px 10px 0px rgb(0 0 0/40%), -10px -10px 0px rgb(255 114 114 / 80%);
+        }
+        .aboutme-section{
+            padding: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-flow: wrap;
+        }
+        .aboutme-img{
+            height: 450px;
+            width: 400px;
+            background-image: url("./images/aboutmeimg.jpg");
+            background-position: center;
+            background-size: cover;
+
+        }
+        .aboutme-text{
+            height: auto;
+            width: 40%;
+            margin-left: 40px;
+            text-align: justify;
+           
+        }
+        h1 h2 h3{
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            
+        }
+        #academics{
+            padding: 5px;
+            margin: 5px;
+            max-width: 90%;
+            height: auto;
+            text-align: center;
+        }
+        .academics{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-flow: wrap;
+        }
+        #academics h2{
+            color: white;
+
+        }
+        .services-list{
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(250px, 1fr));
+            grid-gap: 40px;
+            margin-top: 50px;
+        }
+        .services-list div{
+            background:#FF69B4;
+            padding: 40px;
+            font-size: 13px;
+            font-weight: 300;
+            border-radius: 10px;
+            transition: background 0.5s, transform 0.5s;
+}
+        .services-list div i{
+            font-size: 30px;
+            margin-bottom: 30px;
+        }
+        .services-list div a{
+            text-decoration: none;
+            color: #fff;
+            font-size: 12px;
+            margin-top: 20px;
+            display: inline-block;
+        }
+
+        .services-list div:hover{
+           background: #ff004f;
+           transform: translateY(-10px);
+
+        }
+        #interests{
+           padding: 50px 0;
+    
+        }
+        .fields-of-interests{
+           display: grid;
+           grid-template-columns: repeat(auto-fit,minmax(250px, 1fr));
+           grid-gap: 40px;
+           margin-top: 50px;
+        }
+        .interest{
+           border-radius: 10px;
+           position: relative;
+           overflow: hidden;
+        }
+        .interest img{
+           height: 300px;
+           width: 350px;
+           border-radius: 10px;
+           display: block;
+           transition: transform 0.5s;
+        }
+        .layer{
+           width: 100%;
+           height: 0;
+           background: linear-gradient(rgba(0,0,0,0.6), #ff004f);
+           border-radius: 10px;
+           position: absolute;
+           left: 0;
+           bottom: 0;
+           overflow: hidden;
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           flex-direction: column;
+           padding: 0 15px;
+           text-align: center;
+           font-size: 14px;
+           transition: height 0.5s;
+        }
+        .layer h4{
+           font-weight: 500;
+           margin-bottom: 20px;
+        }
+        .layer a{
+           margin-top: 20px;
+           color: #ff004f;
+           text-decoration: none;
+           font-size: 18px;
+           line-height: 60px;
+           background: #fff;
+           width: 60px;
+           border-radius: 50px;
+           text-align: center;
+        }
+        .interest:hover img{
+           transform: scale(1.1);
+        }
+        .interest:hover .layer{
+           height: 100%;
+
+        }
+        .btn{
+           display: block;
+           margin: 50px auto;
+           width: fit-content;
+           border: 1px solid #ff004f;
+           padding: 14px 50px;
+           border-radius: 6px;
+           text-decoration: none;
+           color: #fff;
+           transition: background 0.5s;
+        }
+        .btn:hover{
+           background: #ff004f;
+
+        }
+        #interests h2{
+            color: white;
+            text-align: center;
+        }
+        .contact{
+            width: 100%;
+            height: auto;
+            padding: 75px 0 50px 0;
+            text-align: center;
+            background-color: rgba(3,3,3,45%);
+        }
+        .contact p{
+            margin-bottom: 50px;
+        }
+        .contact h2, .contact p{
+            color: white;
+        }
+        .contact-form{
+            max-width: 800px;
+            display: flex;
+            text-align: left;
+            max-width: 1100px;
+            margin: 0 auto;
+            color: white;
+
+
+        }
+        .contact-form label{
+            display: block;
+            margin-bottom: 9px;
+        }
+        .message{
+            display: flex;
+            flex-direction: column;
+            width: 60%;
+        }
+        .message textarea{
+            border-radius: 5px;
+            border: 0px;
+        }
+        .contact-details{
+            flex: 1px;
+            margin-right: 50px;
+        }
+        .contact-details input{
+            width: 100%;
+            border-radius: 5px;
+            border: 0px;
+            padding: 15px 20px; 
+            margin-bottom: 20px; 
+        }
+        .message button{
+            color: #ff004f;
+            border-radius: 5px;
+            border: 0;
+            background: lightblue;
+            width: 140px;
+            height: 40px;
+            margin-top: 40px;
+            margin-left: auto;
+            text-transform: uppercase;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .message button hover{
+            background: black;
+            color: white;
+            transition: 0.2s;
+        }
+        .footer{
+            height: 90px;
+            background-color: #1f2027;
+        }
+        footer .container{
+            display: flex;
+            align-items: center;
+            height: 100%;
+        }
+        .social-icons{
+            font-size: 200%;
+            width: auto;
+            margin-left: auto;
+        }
+        .social-icons a i{
+            color: white;
+            transition: 0.2s;
+        }
+        .social-icons a i:hover{
+            color: lightblue;
+            transition: 0.2s;
+
+        }
+        .copyright{
+            color: white;
+        }
+        .container sub-title{
+            text-align: center;
+        }
+        .services-list p{
+            font-size: medium;
+        }
+
+     
+        
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#header">Home</a></li>
+            <li><a href="#aboutme">About</a></li>
+            <li><a href="#academics">Academics</a></li>
+            <li><a href="#interests">Interests</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <section class="hero">
+        <div class="container">
+            <img src="./images/imagea.jpeg">
+            <h1>RAMANNYA SRIVASTAVA<br>Welcome to my digital portfolio</h1>
+            
+
+        </div>
+    </section>
+    <section id="aboutme" class="aboutme">
+        <h2>About Me</h2>
+        <div class="aboutme-section">
+            <div class="img">
+                <div class="aboutme-img"></div>
+            </div>
+            <div class="aboutme-text">
+                <p> This website depicts all about me- the growth and progress that I have made 
+                    since my primary schooling. After coming to the college, I have put my 
+                    time, energy and effort into my tasks and have learned more than ever. 
+                    Reflecting on my work has shown me how far I have come as both a student, 
+                    and a person.<br> <br>I am Ramannya Srivastava. I belong to Ranchi, Jharkhand and I am currently pursuing B.E. in Computer Science and Engineering from Bangalore Institute of Technology, Bangalore, India. I will probably say that "The secret of change is to focus all of your energy not on fighting the old, but on building the new" is one tough line that I have started my journey on and am aspiring to continue on. </p>
+
+            </div>
+        </div>
+    </section>
+    <!------academics------>  
+    <div id="academics">
+        <div class="container">
+            <h2 class="sub-title"><br>My Education</h2>
+            <div class="services-list">
+                <div>
+                    <i class="fa-solid fa-baby"></i>
+                    <h3>Kindergarten</h3>
+                    <p>St.Mary's School</p>
+                    <a href="/kinder.html">Learn more</a>
+                </div>
+                
+                <div>
+                    <i class="fa-solid fa-crop"></i>
+                    <h3>Primary</h3>
+                    <p>St.Thomas School</p>
+                    <a href="/primary.html">Learn more</a>
+                </div>
+                <div>
+                    <i class="fa-solid fa-book"></i>
+                    <h3>Primary and Secondary</h3>
+                    <p>International School</p>
+                    <a href="/secondary.html">Learn more</a>
+                </div>
+                <div>
+                    <i class="fa-solid fa-book-open-reader"></i>
+                    <h3>Senior Secondary</h3>
+                    <p>Jawahar Vidya Mandir, Shyamali</p>
+                    <a href="/senior.html">Learn more</a>
+                </div>
+                <div>
+                    <i class="fa-solid fa-laptop"></i>
+                    <h3>Bachelor of Engineering</h3>
+                    <p>Bangalore Institute of Technology</p>
+                    <a href="/engg.html">Learn more</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!----interests---->
+    <div id="interests">
+        <div class="container">
+            <h2 class="sub-title">My Interests</h2>
+            <div class="fields-of-interests">
+                <div class="interest">
+                    <img src="./images/travelf.jpg">
+                    <div class="layer">
+                        <h3>Travelling</h3>
+                        <a href="/travel.html"><i class="fa-solid fa-link"></i></a>
+                    </div>
+                </div>
+                <div class="interest">
+                    <img src="./images/photography.jpg">
+                    <div class="layer">
+                        <h3>Photography</h3>
+                        <a href="/photography.html"><i class="fa-solid fa-link"></i></a>
+                    </div>
+                </div>
+                <div class="interest">
+                    <img src="./images/book read.jpg">
+                    <div class="layer">
+                        <h3>Reading books</h3>
+                        <a href="/books.html"><i class="fa-solid fa-link"></i></a>
+                    </div>
+                </div>
+                <div class="interest">
+                    <img src="./images/speaker.jpg">
+                    <div class="layer">
+                        <h3>Public Speaking</h3>
+                        <a href="/speaker.html"><i class="fa-solid fa-link"></i></a>
+                    </div>
+                </div>
+                <div class="interest">
+                    <img src="./images/pet love.jpg">
+                    <div class="layer">
+                        <h3>Animal Lover</h3>
+                        <a href="/pet.html"><i class="fa-solid fa-link"></i></a>
+                    </div>
+                </div>
+                <div class="interest">
+                    <img src="./images/garden.jfif">
+                    <div class="layer">
+                        <h3>Gardening</h3>
+                        <a href="/garden.html"><i class="fa-solid fa-link"></i></a>
+                    </div>
+                </div>
+                <div class="interest">
+                    <img src="./images/danceimage.jfif">
+                    <div class="layer">
+                        <h3>Dancing</h3>
+                        <a href="/dance.html"><i class="fa-solid fa-link"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <!-----contact------>
+    <section id="contactme" class="contact">
+        <h2>Contact Me</h2>
+        <p>Use this form to get in touch. I would love to hear from you.</p>
+        <form class="contact-form">
+            <div class="contact-details">
+                <label for="name">Name</table>
+                <input type="text" id="yourname" placeholder="Your name">
+
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" placeholder="Reason for your message ">
+
+                <label for="email">Email address</label>
+                <input type="email" id="email" placeholder="Your email address">
+
+            </div>
+            <div class="message">
+                <label for="msg">Message</label>
+                <textarea id="msg" rows="14"></textarea>
+                <button type="submit">Submit</button>
+            </div>
+
+        </form>
+        
+    </section>
+    <footer>
+        <div class="container">
+            <div class="copyright">
+                This site &copy;2023 Ramannya Srivastava
+            </div>
+            <p><i class="fa-solid fa-user"></i> ramannyasrivastava2002@gmail.com</p>
+            <div class="social-icons">
+                <a href=""><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+
+            
+        </div>
+
+    </footer>
+
+</body>
+</html>
